@@ -19,8 +19,12 @@ class Calculator:
 
         return result
 
+    # factorial
+    def factorial(number: int):
+        return Calculator.product(range(1, number+1))
+
 
 
 if __name__ == '__main__':
-    prod = Calculator.product([3, 3, 3])
+    prod = Calculator.factorial(4)
     print(prod)
