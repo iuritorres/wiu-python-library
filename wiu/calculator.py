@@ -2,7 +2,7 @@ from .message import Message
 
 class Calculator:
     
-    # basic operations
+    # BASIC OPERATIONS
     def add(n1: int|float, n2: int|float) -> int|float:
         return (n1 + n2)
 
@@ -15,7 +15,8 @@ class Calculator:
     def divide(n1: int|float, n2: int|float) -> int|float:
         return (n1 / n2)
 
-    # multiply all numbers from a list
+
+    # MULTIPLY ALL NUMBERS FROM A LIST
     def prod(array: list[int|float]) -> int|float:
         try:
             accumulated = array[0]
@@ -31,8 +32,9 @@ class Calculator:
 
         except IndexError:
             Message.send_error("You can't pass an empty list")
-    
-    # sum all numbers from a list
+
+
+    # SUM ALL NUMBERS FROM A LIST
     def sum(array: list[int|float]) -> int|float:
         try:
             accumulated = array[0]
@@ -50,6 +52,20 @@ class Calculator:
             Message.send_error("You can't pass an empty list")
 
 
-    # factorial
+    # CALC AVERAGE OF A LIST OF NUMBERS
+    def average(array: list[int|float]) -> int|float:
+        try:   
+            average = sum(array) / len(array)
+
+            if '.0' in str(average):
+                average = int( str(average).replace('.0', '') )
+
+            return average
+
+        except TypeError:
+            print('\033[1;31m[WARNING]\033[0m \033[31mcalcAverage expect an list[int|float] in parameter\033[0m')
+
+
+    # FACTORIAL
     def factorial(number: int) -> int:
         return Calculator.prod(range(1, number+1))
