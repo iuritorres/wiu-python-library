@@ -1,30 +1,57 @@
+from utils import Message
+
 class Calculator:
     
     # basic operations
-    def add      (num1: int|float, num2: int|float) -> int|float : return (num1 + num2)
-    def subtract (num1: int|float, num2: int|float) -> int|float : return (num1 - num2)
-    def multiply (num1: int|float, num2: int|float) -> int|float : return (num1 * num2)
-    def divide   (num1: int|float, num2: int|float) -> int|float : return (num1 / num2)
+    def add(n1: int|float, n2: int|float) -> int|float:
+        return (n1 + n2)
 
-    # product of a list of numbers
-    def product(array: list) -> int|float:
-        result = array[0]
+    def subtract(n1: int|float, n2: int|float) -> int|float:
+        return (n1 - n2)
 
-        for index in range(len(array)):
-            if (index + 1) == len(array):
-                break
+    def multiply(n1: int|float, n2: int|float) -> int|float:
+        return (n1 * n2)
 
-            else:
-                result *= array[index + 1]
+    def divide(n1: int|float, n2: int|float) -> int|float:
+        return (n1 / n2)
 
-        return result
+    # multiply all numbers from a list
+    def prod(array: list[int|float]) -> int|float:
+        try:
+            accumulated = array[0]
+
+            for index in range(len(array)):
+                if (index + 1) == len(array):
+                    break
+
+                else:
+                    accumulated *= array[index + 1]
+
+            return accumulated
+
+        except IndexError:
+            Message.send_error("You can't pass an empty list")
+    
+    # sum all numbers from a list
+    def sum(array: list[int|float]) -> int|float:
+        try:
+            accumulated = array[0]
+
+            for index in range(len(array)):
+                if (index + 1) == len(array):
+                    break
+
+                else:
+                    accumulated += array[index + 1]
+
+            return accumulated
+
+        except IndexError:
+            Message.send_error("You can't pass an empty list")
+
 
     # factorial
     def factorial(number: int) -> int:
-        return Calculator.product(range(1, number+1))
+        return Calculator.prod(range(1, number+1))
 
-
-
-if __name__ == '__main__':
-    prod = Calculator.factorial(4)
-    print(prod)
+print(Calculator.prod([]))
