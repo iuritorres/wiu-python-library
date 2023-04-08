@@ -5,7 +5,7 @@ with open('README.md', 'r') as file:
 
 setup(
     name='wiu',
-    version='0.0.2',
+    version='0.0.6',
     license='MIT License',
     author='Iuri Torres & João Witor',
     long_description=readme,

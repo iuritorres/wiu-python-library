@@ -1,4 +1,4 @@
-from utils import Message
+from .message import Message
 
 class Calculator:
     
@@ -53,5 +53,3 @@ class Calculator:
     # factorial
     def factorial(number: int) -> int:
         return Calculator.prod(range(1, number+1))
-
-print(Calculator.prod([]))

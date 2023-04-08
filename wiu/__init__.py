@@ -1,1 +1,2 @@
-from .calculator import *
+from .calculator import Calculator
+from .message import Message

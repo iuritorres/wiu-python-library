@@ -1,4 +1,3 @@
-# Message functions
 class Message:
 
     def send_success(success_msg: str):
