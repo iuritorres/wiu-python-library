@@ -31,7 +31,7 @@ returns:
 ```
 my_numbers = [1, 3, 6, 4, 5, 9]
 
-prod = calc.product(my_numbers)
+prod = calc.prod(my_numbers)
 print(prod)
 ```
 returns:
