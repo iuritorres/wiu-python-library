@@ -55,7 +55,7 @@ class Calculator:
     # CALC AVERAGE OF A LIST OF NUMBERS
     def average(array: list[int|float]) -> int|float:
         try:   
-            average = sum(array) / len(array)
+            average = Calculator.sum(array) / len(array)
 
             if '.0' in str(average):
                 average = int( str(average).replace('.0', '') )
